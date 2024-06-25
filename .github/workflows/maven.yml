@@ -30,6 +30,9 @@ jobs:
     - name: Build with Maven
       run: mvn clean package -DskipTests
 
+    - name: move
+      run: mkdir staging && mv target/*.jar staging/my-app-${{ github.run_number }}.jar
+
 
    
 
