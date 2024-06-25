@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+     - run: mvn clean package -DskipTests
 
 
     - name: list the content of folder that has been build 
@@ -42,14 +42,14 @@ jobs:
 
    
 
-   - name: Upload War file
-     uses: actions/upload-artifact@v3
-   with:
-    name: my-artifact
-    path: setup/*.war
+   - name: Upload file 
+    - run: mkdir staging && mv target/*.jar staging/my-app-${{ github.run_number }}.jar
 
-   
-
+    - uses: actions/upload-artifact@v3
+    with:
+    name: Package
+    path: staging
+    retention-days: 1
 
 
 
