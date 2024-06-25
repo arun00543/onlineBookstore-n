@@ -42,6 +42,10 @@ jobs:
         retention-days: 1
 
 
+    - name: copy try
+      run: cp -r /target /setup 
+
+
    
 
    
