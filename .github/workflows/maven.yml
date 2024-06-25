@@ -31,19 +31,10 @@ jobs:
      - run: mvn clean package -DskipTests
 
 
-    - name: list the content of folder that has been build 
-      run: ls
-
-    - name: list the content of folder target 
-      run: ls -l target
-
-    - name: List directory contents
-      run: ls -R setup
-
    
 
    - name: Upload file 
-     run: mkdir staging && mv target/*.jar staging/my-app-${{ github.run_number }}.jar
+     run: mkdir staging && mv target/*.war staging/my-app-${{ github.run_number }}.war
 
     -name: upload action
     uses: actions/upload-artifact@v3
