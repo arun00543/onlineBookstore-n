@@ -46,6 +46,12 @@ jobs:
         name: my-app
         path: target/*.war
 
+   - name: Upload War file
+     uses: actions/upload-artifact@v3
+  with:
+    name: my-artifact
+    path: setup/*.war
+
    
 
 
