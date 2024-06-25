@@ -34,7 +34,7 @@ jobs:
       run: mkdir staging && mv target/*.war staging/my-app-${{ github.run_number }}.war
 
 
-      -name: change this
+    - name: change this
       uses: actions/upload-artifact@v3
       with:
         name: Package
