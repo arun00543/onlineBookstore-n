@@ -43,9 +43,10 @@ jobs:
    
 
    - name: Upload file 
-    - run: mkdir staging && mv target/*.jar staging/my-app-${{ github.run_number }}.jar
+     run: mkdir staging && mv target/*.jar staging/my-app-${{ github.run_number }}.jar
 
-    - uses: actions/upload-artifact@v3
+    -name: upload action
+    uses: actions/upload-artifact@v3
     with:
     name: Package
     path: staging
