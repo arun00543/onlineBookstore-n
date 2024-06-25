@@ -36,13 +36,7 @@ jobs:
    - name: Upload file 
      run: mkdir staging && mv target/*.war staging/my-app-${{ github.run_number }}.war
 
-    -name: upload action
-    uses: actions/upload-artifact@v3
-    with:
-    name: Package
-    path: staging
-    retention-days: 1
-
+   
 
 
         
