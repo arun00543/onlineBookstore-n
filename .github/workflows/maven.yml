@@ -31,7 +31,7 @@ jobs:
       run: mvn clean package -DskipTests
 
     - name: move
-      run: mkdir staging && mv target/*.jar staging/my-app-${{ github.run_number }}.jar
+      run: mkdir staging && mv target/*.war staging/my-app-${{ github.run_number }}.war
 
 
    
