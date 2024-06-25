@@ -37,7 +37,8 @@ jobs:
     - name: list the content of folder target 
       run: ls -l target
 
-
+    - name: List directory contents
+      run: ls -R setup
 
     - name: Upload JAR file
       uses: actions/upload-artifact@v3
@@ -45,13 +46,7 @@ jobs:
         name: my-app
         path: target/*.war
 
-    -name: Upload War file
-     uses: actions/upload-artifact@v3
-     with:
-       name: my-artifact
-       path: setup/warfile.war
-
-
+   
 
 
 
