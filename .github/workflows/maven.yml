@@ -52,8 +52,7 @@ jobs:
         ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source_dir: "staging/my-app-${{ github.run_number }}.war"
         destination_dir: ${{ secrets.DESTINATION_FOLDER }}/my-app-${{ github.run_number }}.war
-        rm: true
-
+ 
 
 
 
