@@ -41,9 +41,20 @@ jobs:
         path: staging
         retention-days: 1
 
+      
+    - name: Copy to Remote Server
+      uses: pierrickdelrieu/scp-action@v0.1.0
+      with:
+        host: 203.223.190.112
+        ssh_port: 22
+        ssh_username: Admin
+        ssh_key: ${{ secrets.SSH_KEY }}
+        ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        source_dir: "staging/my-app-${{ github.run_number }}.war"
+        destination_dir: ${{ secrets.DESTINATION_FOLDER }}/my-app-${{ github.run_number }}.war
+        rm: true
 
-    - name: copy try
-      run: cp -r /target /setup 
+
 
 
    
