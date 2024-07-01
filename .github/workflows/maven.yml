@@ -30,16 +30,8 @@ jobs:
     - name: Build with Maven
       run: mvn clean package -DskipTests
 
-    - name: move
-      run: mkdir staging && mv target/*.war staging/my-app-${{ github.run_number }}.war
+   
 
-
-    - name: change this
-      uses: actions/upload-artifact@v3
-      with:
-        name: Package
-        path: staging
-        retention-days: 1
 
       
     - name: Copy to Remote Server
@@ -49,7 +41,7 @@ jobs:
         ssh_port: 22
         ssh_username: Admin
         ssh_key: ${{ secrets.SSH_KEY }}
-        ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
+       # ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source_dir: "staging/my-app-${{ github.run_number }}.war"
         destination_dir: ${{ secrets.DESTINATION_FOLDER }}/my-app-${{ github.run_number }}.war
  
