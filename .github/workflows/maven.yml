@@ -24,6 +24,6 @@ jobs:
         host: 203.223.112.190
         username: Admin
         password: Xyloite@999
-       # port: ${{ secrets.WINDOWS_SERVER_PORT }}  # Adjust port if needed
+        port: 22 # Adjust port if needed
         source: "target/onlinebookstore.war"  # Path to your JAR file relative to the repository root
         target: "C:\\Users\\Admin\\Documents\\ARUN"  
