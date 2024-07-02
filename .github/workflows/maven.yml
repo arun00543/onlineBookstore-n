@@ -26,4 +26,7 @@ jobs:
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
         
     - name: Deploy with SCP
-      run: scp -P 22 -o StrictHostKeyChecking=no target/onlinebookstore.war Admin@203.223.112.190:C:/Users/Admin/Documents/ARUN
+      run: |
+            for i in 1 2 3 4 5; do
+              scp -P 22 -o ConnectTimeout=10 -o StrictHostKeyChecking=no target/onlinebookstore.war Admin@203.223.112.190:C:/Users/Admin/Documents/ARUN && break || sleep 15
+            done
