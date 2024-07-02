@@ -25,5 +25,5 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
         
-    - name: Deploy with SCP
-      run: scp -o StrictHostKeyChecking=no target/onlinebookstore.war Admin@203.223.112.190:C:/Users/Admin/Documents/ARUN
+   - name: Deploy with SCP
+     run: scp -P 22 -o StrictHostKeyChecking=no target/onlinebookstore.war Admin@203.223.112.190:C:/Users/Admin/Documents/ARUN
