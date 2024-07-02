@@ -43,7 +43,7 @@ jobs:
         ssh_key: ${{ secrets.SSH_KEY }}
        # ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source_dir: "target/*.war"
-        destination_dir: "C/:
+        destination_dir:  "C:\Users\Admin\Documents\ARUN"
  
 
 
