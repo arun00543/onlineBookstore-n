@@ -26,5 +26,5 @@ jobs:
         ssh_username: Admin
         ssh_key: ${{ secrets.SSH_KEY }}
        # ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        source_dir: "target/*.war"
+        source_dir: "target/dependency/webapp-runner.jar"
         destination_dir: "C:\\Users\\Admin\\Documents\\ARUN"
