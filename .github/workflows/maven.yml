@@ -37,13 +37,13 @@ jobs:
     - name: Copy to Remote Server
       uses: pierrickdelrieu/scp-action@v0.1.0
       with:
-        host: 203.223.190.112
+        host:  203.223.190.112
         ssh_port: 22
         ssh_username: Admin
         ssh_key: ${{ secrets.SSH_KEY }}
        # ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source_dir: "target/*.war"
-        destination_dir:  "C:\Users\Admin\Documents\ARUN"
+        destination_dir: "C:\\Users\\Admin\\Documents\\ARUN"
  
 
 
