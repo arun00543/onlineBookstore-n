@@ -42,8 +42,8 @@ jobs:
         ssh_username: Admin
         ssh_key: ${{ secrets.SSH_KEY }}
        # ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        source_dir: "staging/my-app-${{ github.run_number }}.war"
-        destination_dir: ${{ secrets.DESTINATION_FOLDER }}/my-app-${{ github.run_number }}.war
+        source_dir: "target/*.war"
+        destination_dir: "C/:
  
 
 
