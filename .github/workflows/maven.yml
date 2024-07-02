@@ -18,13 +18,12 @@ jobs:
        cache: 'maven'
     - name: Build with Maven
       run: mvn clean package
-    - name: Copy single file to remote
-      uses: garygrossgarten/github-action-scp@release
+    - name: Upload JAR to Windows Server
+      uses: appleboy/scp-action@master
       with:
-        host:  203.223.190.112
-        ssh_port: 22
-        ssh_username: Admin
-        ssh_key: ${{ secrets.SSH_KEY }}
-       # ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        source_dir: "target/onlinebookstore.war"
-        destination_dir: "C:\\Users\\Admin\\Documents\\ARUN"
+        host: 203.223.112.190
+        username: Admin
+        password: Xyloite@999
+       # port: ${{ secrets.WINDOWS_SERVER_PORT }}  # Adjust port if needed
+        source: "target/onlinebookstore.war"  # Path to your JAR file relative to the repository root
+        target: "C:\\Users\\Admin\\Documents\\ARUN"  
