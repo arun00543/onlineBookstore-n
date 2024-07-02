@@ -23,7 +23,7 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY }}
-        known_hosts: 192.168.0.101
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
         
     - name: Deploy with SCP
-      run: scp target/onlinebookstore.war Admin@203.223.112.190:C:\\Users\\Admin\\Documents\\ARUN
+      run: scp -o StrictHostKeyChecking=no target/onlinebookstore.war Admin@203.223.112.190:C:/Users/Admin/Documents/ARUN
